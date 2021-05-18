@@ -6,9 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts 'Cleaning the DB...'
+Article.destroy_all
+
+puts 'Creating articles...'
 10.times do
-  Article.new(
+  Article.create!(
     title: Faker::Games::Witcher.character,
     content: Faker::Quote.famous_last_words
-  ).save
+  )
 end
+
+puts "...Created #{Article.count} articles"
