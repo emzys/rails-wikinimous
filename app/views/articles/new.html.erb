@@ -1,0 +1,11 @@
+<div class="container mt-3">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-8 col-lg-6">
+      <%= link_to articles_path, class: 'btn-light' do %>
+        <p><i class="fas fa-undo m-1"></i> BACK</p>
+      <% end %>
+      <h1>Add an article</h1>
+      <%= render 'articles/form' %>
+    </div>
+  </div>
+</div>
