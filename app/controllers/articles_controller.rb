@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    if @task.save
+    if @article.save
       redirect_to article_path(@article)
     else
       render :new  # 'new.html.erb'
