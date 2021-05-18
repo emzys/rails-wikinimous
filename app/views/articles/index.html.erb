@@ -1,0 +1,25 @@
+<div class="container">
+  <%# <div class="d-flex align-items-center">
+    <h1>Tasks </h1>
+  </div> %>
+  <h1 class="m-3">Tasks </h1>
+  <div class="tasks">
+    <% @tasks.each do |task| %>
+      <div class="task d-flex align-items-center">
+      <%# <div class="m-4"> %>
+        <% if task.completed == false %>
+          <i class="far fa-square m-3"></i>
+        <% else %>
+          <i class="far fa-check-square m-3"></i>
+        <% end %>
+        <p class="m-0"><%= link_to task.title, task_path(task) %> - <%= task.details %> </p>
+        <%= link_to task_path(task), method: :delete do %>
+          <i class="fas fa-trash-alt m-3"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to new_task_path do %>
+    <p class="d-flex align-items-center m-3"><i class="fas fa-plus m-1"></i> Add new task</p>
+  <% end %>
+</div>
