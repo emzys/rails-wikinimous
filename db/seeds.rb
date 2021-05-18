@@ -13,7 +13,7 @@ puts 'Creating articles...'
 10.times do
   Article.create!(
     title: Faker::Games::Witcher.character,
-    content: Faker::Quote.famous_last_words
+    content: Faker::Games::Witcher.quote
   )
 end
 
